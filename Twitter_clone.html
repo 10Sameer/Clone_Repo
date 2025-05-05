@@ -875,7 +875,46 @@
             }
         });
     
-
+        // Retweet functionality
+        document.addEventListener('click', function (e) {
+            if (e.target.classList.contains('fa-retweet')) {
+                const retweetAction = e.target.closest('.tweet-action');
+                const retweetCount = retweetAction.querySelector('span');
+                let count = parseInt(retweetCount.textContent.replace(/,/g, ''));
+    
+                if (retweetAction.style.color === 'rgb(0, 186, 124)') {
+                    retweetAction.style.color = '';
+                    count -= 1;
+                } else {
+                    retweetAction.style.color = '#00ba7c';
+                    count += 1;
+                }
+    
+                retweetCount.textContent = count.toLocaleString();
+            }
+        });
+    
+        // Tweet composer functionality
+        const tweetButton = document.querySelector('.composer-actions .tweet-button');
+        const tweetInput = document.querySelector('.composer-input input');
+    
+        tweetButton.addEventListener('click', function () {
+            const tweetText = tweetInput.value.trim();
+            if (tweetText) {
+                const newTweet = {
+                    username: 'YourUsername',
+                    handle: '@yourhandle',
+                    avatar: 'https://randomuser.me/api/portraits/men/1.jpg',
+                    text: tweetText,
+                    time: 'now',
+                    comments: 0,
+                    retweets: 0,
+                    likes: 0,
+                    views: '0'
+                };
+    
+             
+    });
     </script>
 
 </body>
