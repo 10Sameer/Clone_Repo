@@ -778,6 +778,82 @@
             }
         ];
     
+        // Render tweets
+        const tweetsContainer = document.querySelector('.tweets');
+        tweets.forEach(tweet => {
+            const tweetElement = document.createElement('div');
+            tweetElement.className = 'tweet';
+    
+            let imageHtml = '';
+            if (tweet.image) {
+                imageHtml = `<img src="${tweet.image}" alt="Tweet image" class="tweet-image">`;
+            }
+    
+            tweetElement.innerHTML = `
+                <img src="${tweet.avatar}" alt="Profile" class="tweet-avatar">
+                <div class="tweet-content">
+                    <div class="tweet-header">
+                        <span class="tweet-username">${tweet.username}</span>
+                        <span class="tweet-handle">${tweet.handle}</span>
+                        <span class="tweet-time">· ${tweet.time}</span>
+                        <i class="fas fa-ellipsis-h tweet-more"></i>
+                    </div>
+                    <div class="tweet-text">${tweet.text}</div>
+                    ${imageHtml}
+                    <div class="tweet-actions">
+                        <div class="tweet-action comment">
+                            <i class="far fa-comment"></i>
+                            <span>${tweet.comments.toLocaleString()}</span>
+                        </div>
+                        <div class="tweet-action retweet">
+                            <i class="fas fa-retweet"></i>
+                            <span>${tweet.retweets.toLocaleString()}</span>
+                        </div>
+                        <div class="tweet-action like">
+                            <i class="far fa-heart"></i>
+                            <span>${tweet.likes.toLocaleString()}</span>
+                        </div>
+                        <div class="tweet-action share">
+                            <i class="fas fa-share"></i>
+                            <span>${tweet.views}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            tweetsContainer.appendChild(tweetElement);
+        });
+    
+        // Render trends
+        const trendsContainer = document.querySelector('.trends');
+        trends.forEach(trend => {
+            const trendElement = document.createElement('div');
+            trendElement.className = 'trend';
+            trendElement.innerHTML = `
+                <div class="trend-category">${trend.category}</div>
+                <div class="trend-name">${trend.name}</div>
+                <div class="trend-count">${trend.count}</div>
+            `;
+            trendsContainer.insertBefore(trendElement, trendsContainer.lastElementChild);
+        });
+    
+        // Render suggested users
+        const suggestedUsersContainer = document.querySelector('.who-to-follow');
+        suggestedUsers.forEach(user => {
+            const userElement = document.createElement('div');
+            userElement.className = 'suggested-user';
+            userElement.innerHTML = `
+                <img src="${user.avatar}" alt="Profile">
+                <div class="suggested-user-info">
+                    <div class="suggested-username">${user.username}</div>
+                    <div class="suggested-handle">${user.handle}</div>
+                    <div class="suggested-bio">${user.bio}</div>
+                </div>
+                <button class="follow-button">Follow</button>
+            `;
+            suggestedUsersContainer.insertBefore(userElement, suggestedUsersContainer.lastElementChild);
+        });
+    
+     
     </script>
 
 </body>
