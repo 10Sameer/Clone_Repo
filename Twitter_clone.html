@@ -913,7 +913,49 @@
                     views: '0'
                 };
     
-             
+                const tweetElement = document.createElement('div');
+                tweetElement.className = 'tweet';
+                tweetElement.innerHTML = `
+                    <img src="${newTweet.avatar}" alt="Profile" class="tweet-avatar">
+                    <div class="tweet-content">
+                        <div class="tweet-header">
+                            <span class="tweet-username">${newTweet.username}</span>
+                            <span class="tweet-handle">${newTweet.handle}</span>
+                            <span class="tweet-time">· ${newTweet.time}</span>
+                            <i class="fas fa-ellipsis-h tweet-more"></i>
+                        </div>
+                        <div class="tweet-text">${newTweet.text}</div>
+                        <div class="tweet-actions">
+                            <div class="tweet-action comment">
+                                <i class="far fa-comment"></i>
+                                <span>0</span>
+                            </div>
+                            <div class="tweet-action retweet">
+                                <i class="fas fa-retweet"></i>
+                                <span>0</span>
+                            </div>
+                            <div class="tweet-action like">
+                                <i class="far fa-heart"></i>
+                                <span>0</span>
+                            </div>
+                            <div class="tweet-action share">
+                                <i class="fas fa-share"></i>
+                                <span>0</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                tweetsContainer.insertBefore(tweetElement, tweetsContainer.firstChild);
+                tweetInput.value = '';
+            }
+        });
+    
+        // Allow pressing Enter to tweet
+        tweetInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                tweetButton.click();
+            }
+        });
     });
     </script>
 
