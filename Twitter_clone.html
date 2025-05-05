@@ -853,7 +853,29 @@
             suggestedUsersContainer.insertBefore(userElement, suggestedUsersContainer.lastElementChild);
         });
     
-     
+        // Like button functionality
+        document.addEventListener('click', function (e) {
+            if (e.target.classList.contains('fa-heart')) {
+                const likeAction = e.target.closest('.tweet-action');
+                const likeCount = likeAction.querySelector('span');
+                let count = parseInt(likeCount.textContent.replace(/,/g, ''));
+    
+                e.target.classList.toggle('far');
+                e.target.classList.toggle('fas');
+    
+                if (e.target.classList.contains('fas')) {
+                    likeAction.style.color = '#f91880';
+                    count += 1;
+                } else {
+                    likeAction.style.color = '';
+                    count -= 1;
+                }
+    
+                likeCount.textContent = count.toLocaleString();
+            }
+        });
+    
+
     </script>
 
 </body>
