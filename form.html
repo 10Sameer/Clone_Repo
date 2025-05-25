@@ -93,7 +93,28 @@
     <button type="submit">Submit</button>
   </form>
 
+  <script>
+    function validateForm() {
+      let isValid = true;
 
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const number = document.getElementById('number').value.trim();
+
+      // Clear previous errors
+      document.getElementById('nameError').textContent = '';
+      document.getElementById('emailError').textContent = '';
+      document.getElementById('passwordError').textContent = '';
+      document.getElementById('numberError').textContent = '';
+
+      if (name === '') {
+        document.getElementById('nameError').textContent = 'Name is required.';
+        isValid = false;
+      }
+
+     
+  </script>
 
 </body>
 </html>
