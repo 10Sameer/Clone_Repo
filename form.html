@@ -113,7 +113,19 @@
         isValid = false;
       }
 
-     
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        document.getElementById('emailError').textContent = 'Invalid email format.';
+        isValid = false;
+      }
+
+      if (password.length < 6) {
+        document.getElementById('passwordError').textContent = 'Password must be at least 6 characters.';
+        isValid = false;
+      }
+
+    
+      return isValid;
+    }
   </script>
 
 </body>
