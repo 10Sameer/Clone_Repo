@@ -55,7 +55,18 @@
       ctx.stroke();
 
       // Draw moving circle
-   
+      ctx.beginPath();
+      ctx.arc(x, y, 10, 0, Math.PI * 2);
+      ctx.fillStyle = '#ff00cc';
+      ctx.fill();
+
+      angle += 0.05;
+      radius += 0.3;
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
   </script>
 </body>
 </html>
