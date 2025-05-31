@@ -32,7 +32,18 @@
     const centerX = canvas.width / 2;
     const centerY = canvas.height / 2;
 
-  
-  </script>
+    const path = []; // store spiral points
+
+    function animate() {
+      ctx.fillStyle = 'rgba(17, 17, 17, 0.1)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height); // fade trail
+
+      // Compute new point on spiral
+      const x = centerX + radius * Math.cos(angle);
+      const y = centerY + radius * Math.sin(angle);
+
+      path.push({ x, y }); // Save point for drawing the spiral
+
+     
 </body>
 </html>
