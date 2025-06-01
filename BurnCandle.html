@@ -125,7 +125,30 @@
       }
     }
 
- 
+    button.addEventListener('mousedown', () => {
+      flame.style.display = "block";
+      interval = setInterval(updateProgress, 100);
+    });
+
+    button.addEventListener('mouseup', () => {
+      clearInterval(interval);
+    });
+
+    button.addEventListener('mouseleave', () => {
+      clearInterval(interval);
+    });
+
+    tryAgain.addEventListener('click', () => {
+    
+      progress = 0;
+      candleHeight = 150;
+      progressBar.style.width = "0%";
+      candle.style.height = "150px";
+      candle.style.display = "block";
+      button.style.display = "inline-block";
+      flame.style.display = "none";
+      tryAgain.style.display = "none";
+    });
   </script>
 
 </body>
