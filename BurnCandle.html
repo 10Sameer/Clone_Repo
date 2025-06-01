@@ -110,7 +110,21 @@
     let progress = 0;
     let candleHeight = 150;
 
-    
+    function updateProgress() {
+      if (progress < 100) {
+        progress += 1;
+        candleHeight -= 1.2;
+        progressBar.style.width = progress + "%";
+        candle.style.height = candleHeight + "px";
+      } else {
+        clearInterval(interval);
+        flame.style.display = "none";
+        candle.style.display = "none";
+        button.style.display = "none";
+        tryAgain.style.display = "inline-block";
+      }
+    }
+
  
   </script>
 
