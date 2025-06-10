@@ -146,6 +146,23 @@
     }, 1000);
   });
 
+  function updateSlider() {
+    const slideWidth = slider.clientWidth;
+    slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.children.length) % slides.children.length;
+    updateSlider();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.children.length;
+    updateSlider();
+  });
+
+  
+  window.addEventListener('resize', updateSlider);
 </script>
 
 </body>
