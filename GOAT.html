@@ -126,6 +126,25 @@
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
 
+  let countdownValue = 5;
+  let countdownInterval;
+  let currentIndex = 0;
+
+  revealBtn.addEventListener('click', () => {
+    revealBtn.style.display = 'none'; // hide button
+    countdownEl.textContent = countdownValue;
+    
+    countdownInterval = setInterval(() => {
+      countdownValue--;
+      if (countdownValue > 0) {
+        countdownEl.textContent = countdownValue;
+      } else {
+        clearInterval(countdownInterval);
+        countdownEl.style.display = 'none';
+        slider.style.display = 'block';
+      }
+    }, 1000);
+  });
 
 </script>
 
