@@ -62,7 +62,43 @@
     border-radius: 12px;
   }
 
- 
+  /* Navigation arrows */
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(76, 175, 80, 0.8);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+  }
+
+  #prevBtn {
+    left: 10px;
+  }
+  #nextBtn {
+    right: 10px;
+  }
+
+  .nav-btn:hover {
+    background: #388e3c;
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    button {
+      width: 100%;
+      font-size: 1rem;
+      padding: 12px 0;
+    }
+    #countdown {
+      font-size: 3rem;
+    }
+  }
 </style>
 </head>
 <body>
