@@ -238,5 +238,25 @@
             moveButtonRandomly();
         });
         
-      
+        // Smooth random movement in all directions
+        function moveButtonRandomly() {
+            const maxDistance = 150; // Maximum distance to move in pixels
+            const containerRect = buttonsContainer.getBoundingClientRect();
+            const btnRect = noBtn.getBoundingClientRect();
+            
+            // Generate random X and Y offsets (-value to +value)
+            const randomX = (Math.random() * maxDistance * 2) - maxDistance;
+            const randomY = (Math.random() * maxDistance * 2) - maxDistance;
+            
+            // Apply smooth movement
+            noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+            
+            // Continue moving if mouse is still over button
+            setTimeout(() => {
+                if (noBtn.matches(':hover')) {
+                    moveButtonRandomly();
+                }
+            }, 500);
+        }
+    </script>
 </html>
