@@ -217,4 +217,26 @@
 
  
 </body>
+
+ <script>
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const response = document.getElementById('response');
+        const floatingElements = document.getElementById('floatingElements');
+        const buttonsContainer = document.querySelector('.buttons');
+        
+        // Balloon colors
+        const balloonColors = [
+            '#ff4081', '#d81b60', '#ff79b0', '#ff1493',
+            '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b',
+            '#ff9800', '#ff5722', '#9c27b0', '#673ab7',
+            '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4'
+        ];
+        
+        // Make No button run away in all directions when hovered
+        noBtn.addEventListener('mouseover', (e) => {
+            moveButtonRandomly();
+        });
+        
+      
 </html>
