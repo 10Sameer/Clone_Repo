@@ -156,7 +156,43 @@
                 opacity: 0;
             }
         }
-
+        
+        @keyframes balloon-float {
+            0% { 
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% { 
+                transform: translateY(-150px) rotate(10deg);
+                opacity: 0;
+            }
+        }
+        
+        .heart-burst, .balloon-burst {
+            position: absolute;
+            font-size: 30px;
+            animation: burst 2s ease-out forwards;
+        }
+        
+        @keyframes burst {
+            0% {
+                transform: scale(0.1) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2) rotate(360deg);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
