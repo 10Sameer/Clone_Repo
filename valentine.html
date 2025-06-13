@@ -258,5 +258,36 @@
                 }
             }, 500);
         }
+
+          // Reset position when mouse leaves button area
+        buttonsContainer.addEventListener('mouseleave', () => {
+            noBtn.style.transform = 'translate(0, 0)';
+        });
+        
+        // Yes button action
+        yesBtn.addEventListener('click', () => {
+            response.classList.remove('hidden');
+            yesBtn.classList.add('hidden');
+            noBtn.classList.add('hidden');
+            
+            // Create massive heart and balloon flood
+            createHeartFlood();
+            createBalloonFlood();
+            
+            // Add burst effects
+            createHeartBursts();
+            createBalloonBursts();
+        });
+        
+        // Create floating balloons flood
+        function createBalloonFlood() {
+            // Create initial wave of balloons
+            for (let i = 0; i < 100; i++) {
+                setTimeout(() => {
+                    createBalloon();
+                }, i * 100);
+            }
+            
+           
     </script>
 </html>
