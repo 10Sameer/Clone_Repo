@@ -328,6 +328,22 @@
                 { color: '#ff1493', size: '28px' }
             ];
             
-       
+            // Create initial wave of hearts
+            for (let i = 0; i < 200; i++) {
+                setTimeout(() => {
+                    createHeart(heartStyles);
+                }, i * 50);
+            }
+            
+            // Continue creating hearts with different patterns
+            setTimeout(() => {
+                for (let i = 0; i < 150; i++) {
+                    setTimeout(() => {
+                        createHeart(heartStyles, true);
+                    }, i * 40);
+                }
+            }, 3000);
+        }
+
     </script>
 </html>
