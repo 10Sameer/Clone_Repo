@@ -298,5 +298,27 @@
             }, 3000);
         }
         
+        function createBalloon(diagonal = false) {
+            const balloon = document.createElement('div');
+            balloon.classList.add('balloon');
+            
+            const color = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+            balloon.style.backgroundColor = color;
+            
+            if (diagonal) {
+                balloon.style.left = Math.random() * 50 + 25 + 'vw';
+            } else {
+                balloon.style.left = Math.random() * 100 + 'vw';
+            }
+            
+            balloon.style.animationDuration = 6 + Math.random() * 4 + 's';
+            floatingElements.appendChild(balloon);
+            
+            setTimeout(() => {
+                balloon.remove();
+            }, 10000);
+        }
+        
+        
     </script>
 </html>
