@@ -288,6 +288,15 @@
                 }, i * 100);
             }
             
-           
+            // Continue creating balloons
+            setTimeout(() => {
+                for (let i = 0; i < 75; i++) {
+                    setTimeout(() => {
+                        createBalloon(true);
+                    }, i * 150);
+                }
+            }, 3000);
+        }
+        
     </script>
 </html>
