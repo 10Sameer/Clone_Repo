@@ -344,6 +344,23 @@
                 }
             }, 3000);
         }
-
+        
+        // LEFT TO PUSH
+        function createHeart(styles, diagonal = false) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            
+            const style = styles[Math.floor(Math.random() * styles.length)];
+            heart.style.color = style.color;
+            heart.style.fontSize = style.size;
+            
+            if (diagonal) {
+                heart.style.left = Math.random() * 50 + 25 + 'vw';
+            } else {
+                heart.style.left = Math.random() * 100 + 'vw';
+            }
+            
+          
     </script>
 </html>
