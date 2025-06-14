@@ -361,6 +361,13 @@
                 heart.style.left = Math.random() * 100 + 'vw';
             }
             
-          
+            heart.style.animationDuration = 3 + Math.random() * 3 + 's';
+            floatingElements.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }
+
     </script>
 </html>
