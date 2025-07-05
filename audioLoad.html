@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Neon Loading Bar with Start and Reset</title>
+
+</head>
+<body>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar"></div>
+  </div>
+
+  <div class="percentage" id="percentage">0%</div>
+  <div class="success" id="success-msg">✅ Success!</div> <br>
+
+  <div class="buttons">
+    <button class="start-btn" onclick="startLoading()">Start</button>
+    <button class="reset-btn" onclick="resetLoading()">Reset</button>
+  </div>
+
+  <audio id="success-sound" src="ElevenLabs_Text_to_Speech_audio.mp3" preload="auto"></audio>
+
+
+
+</body>
+</html>
