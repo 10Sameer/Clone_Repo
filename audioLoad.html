@@ -27,6 +27,22 @@
       margin-bottom: 20px;
     }
 
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(270deg, #00ffcc, #00bfff, #ff00cc);
+      background-size: 600% 600%;
+      animation: gradientFlow 4s ease infinite;
+      box-shadow: 0 0 20px #00ffcc;
+      transition: width 0.3s ease;
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
   </style>
 </head>
 <body>
