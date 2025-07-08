@@ -114,8 +114,45 @@
 
   <!-- 🔊 Success Sound -->
   <audio id="success-sound" src="ElevenLabs_Text_to_Speech_audio.mp3" preload="auto"></audio>
+<!-- Left -->
+  <script>
+    let progress = 0;
+    let interval;
+    const progressBar = document.getElementById("progress-bar");
+    const percentage = document.getElementById("percentage");
+    const successMsg = document.getElementById("success-msg");
+    const successSound = document.getElementById("success-sound");
 
+    function startLoading() {
+      clearInterval(interval);
+      successMsg.style.display = "none";
+      progress = 0;
+      progressBar.style.width = "0%";
+      percentage.textContent = "0%";
 
+      interval = setInterval(() => {
+        if (progress >= 100) {
+          clearInterval(interval);
+          progressBar.style.width = "100%";
+          percentage.textContent = "100%";
+          successMsg.style.display = "block";
+          successSound.play();
+          return;
+        }
+        progress++;
+        progressBar.style.width = progress + "%";
+        percentage.textContent = progress + "%";
+      }, 40);
+    }
+
+    function resetLoading() {
+      clearInterval(interval);
+      progress = 0;
+      progressBar.style.width = "0%";
+      percentage.textContent = "0%";
+      successMsg.style.display = "none";
+    }
+  </script>
 
 </body>
 </html>
