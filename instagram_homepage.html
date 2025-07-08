@@ -6,7 +6,70 @@
     <title>Instagram Clone</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-  
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #fafafa;
+        }
+        
+        .container {
+            display: flex;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border-bottom: 1px solid #dbdbdb;
+            padding: 10px 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .header .logo h1 {
+            font-family: 'Billabong', cursive;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        
+        .header .search {
+            margin: 0 20px;
+        }
+        
+        .header .search input {
+            background-color: #efefef;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 15px;
+            width: 250px;
+            font-size: 14px;
+        }
+        
+        .header .nav-links {
+            display: flex;
+            align-items: center;
+        }
+        
+        .header .nav-links a {
+            color: #262626;
+            font-size: 22px;
+            margin-left: 22px;
+            text-decoration: none;
+        }
+
+    </style>
 </head>
 <body>
     <div class="container">
@@ -37,12 +100,12 @@
                     </div>
                     <span>Your Story</span>
                 </div>
-               
+                <!-- More stories will be added by JavaScript -->
             </div>
 
             <!-- Posts Section -->
             <div class="posts">
-               
+                <!-- Posts will be added by JavaScript -->
             </div>
         </main>
 
