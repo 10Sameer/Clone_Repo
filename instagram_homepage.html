@@ -366,7 +366,24 @@
             font-weight: 400;
             text-transform: uppercase;
         }
-
+        
+        /* Responsive */
+        @media (max-width: 935px) {
+            .sidebar {
+                display: none;
+            }
+            
+            .main-content {
+                margin-right: 0;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 614px) {
+            .header .search {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
