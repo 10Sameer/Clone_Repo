@@ -527,6 +527,31 @@
                 { username: 'tech_geek', image: 'https://randomuser.me/api/portraits/men/17.jpg', relation: 'New to Instagram' }
             ];
         
+            // Render stories
+            const storiesContainer = document.querySelector('.stories');
+            stories.forEach(story => {
+                const storyElement = document.createElement('div');
+                storyElement.className = 'story';
+                storyElement.innerHTML = `
+                    <div class="story-avatar">
+                        <img src="${story.image}" alt="${story.username}">
+                    </div>
+                    <span>${story.username}</span>
+                `;
+                storiesContainer.appendChild(storyElement);
+            });
+        
+            // Render posts
+            const postsContainer = document.querySelector('.posts');
+            posts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.className = 'post';
+                postElement.innerHTML = `
+                    <div class="post-header">
+                        <div class="post-user">
+                            <div class="post-user-avatar">
+                                <img src="${post.userImage}" alt="${post.username}">
+                            
     </script>
    
    
