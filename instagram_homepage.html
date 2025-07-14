@@ -566,8 +566,34 @@
                             <i class="far fa-paper-plane"></i>
                         </div>
                         <div class="post-actions-right">
-                            <i class="far fa-bookmark"></i>
-
+                            <i class="far fa-bookmark"></
+ 
+                        </div>
+                    </div>
+                    <div class="post-likes">${post.likes.toLocaleString()} likes</div>
+                    <div class="post-caption">
+                        <span class="post-caption-username">${post.username}</span>
+                        ${post.caption}
+                    </div>
+                    <div class="post-comments">
+                        ${post.comments.map(comment => `
+                            <div>
+                                <span class="post-comment-username">${comment.username}</span>
+                                ${comment.text}
+                            </div>
+                        `).join('')}
+                        <div>View all comments</div>
+                    </div>
+                    <div class="post-time">${post.time}</div>
+                    <div class="post-add-comment">
+                        <input type="text" placeholder="Add a comment...">
+                        <button>Post</button>
+                    </div>
+                `;
+                postsContainer.appendChild(postElement);
+            });
+        
+            /
     </script>
    
    
