@@ -593,7 +593,22 @@
                 postsContainer.appendChild(postElement);
             });
         
-            /
+            // Render suggested users
+            const suggestedUsersContainer = document.querySelector('.suggested-users');
+            suggestedUsers.forEach(user => {
+                const userElement = document.createElement('div');
+                userElement.className = 'suggested-user';
+                userElement.innerHTML = `
+                    <img src="${user.image}" alt="${user.username}">
+                    <div class="suggested-user-info">
+                        <div class="username">${user.username}</div>
+                        <div class="follows-you">${user.relation}</div>
+                    </div>
+                    <a href="#" class="follow">Follow</a>
+                `;
+                suggestedUsersContainer.appendChild(userElement);
+            });
+
     </script>
    
    
