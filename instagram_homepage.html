@@ -618,6 +618,14 @@
                 }
             });
         
+            // Add comment functionality
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('.post-add-comment button')) {
+                    const commentInput = e.target.closest('.post-add-comment').querySelector('input');
+                    const commentText = commentInput.value.trim();
+                    if (commentText) {
+                        const commentsContainer = e.target.closest('.post').querySelector('.post-comments');
+                       
     </script>
    
    
