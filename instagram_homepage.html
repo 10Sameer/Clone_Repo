@@ -625,7 +625,17 @@
                     const commentText = commentInput.value.trim();
                     if (commentText) {
                         const commentsContainer = e.target.closest('.post').querySelector('.post-comments');
-                       
+                        const newComment = document.createElement('div');
+                        newComment.innerHTML = `
+                            <span class="post-comment-username">your_username</span>
+                            ${commentText}
+                        `;
+                        commentsContainer.insertBefore(newComment, commentsContainer.lastElementChild);
+                        commentInput.value = '';
+                    }
+                }
+            });
+        });
     </script>
    
    
