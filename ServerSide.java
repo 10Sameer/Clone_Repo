@@ -12,4 +12,16 @@ public class ServerSide {
             Socket clientSocket = serverSocket.accept();
             System.out.println("Client connected!");
 
- 
+            PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
+            out.println("Hello from Server!");
+            out.println("This is a test message.");
+            out.println("Bye!");
+
+            out.close();
+            clientSocket.close();
+            serverSocket.close();
+        } catch (IOException e) {
+            System.out.println("Server Error: " + e.getMessage());
+        }
+    }
+}
