@@ -12,3 +12,21 @@ public class SimpleHTTPHeader {
             for (int i = 0;; i++) {
                 String headerName = conn.getHeaderFieldKey(i);
                 String headerValue = conn.getHeaderField(i);
+
+                if (headerName == null && headerValue == null) {
+                    break; // No more headers
+                }
+
+                if (headerName == null) {
+                    System.out.println("Status: " + headerValue); // First line (status)
+                } else {
+                    System.out.println(headerName + ": " + headerValue);
+                }
+            }
+
+            conn.disconnect();
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
