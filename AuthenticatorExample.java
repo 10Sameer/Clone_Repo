@@ -21,3 +21,11 @@ public class AuthenticatorExample {
             System.out.println("Error: " + e);
         }
     }
+
+    // Custom Authenticator class
+    static class MyAuthenticator extends Authenticator {
+        protected PasswordAuthentication getPasswordAuthentication() {
+            return new PasswordAuthentication("username", "password".toCharArray());
+        }
+    }
+}
