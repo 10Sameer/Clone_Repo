@@ -165,7 +165,16 @@
             gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-
+            
+            // Update and draw particles
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            
+            requestAnimationFrame(animate);
+        }
+        
     </script>
 </body>
 </html>
