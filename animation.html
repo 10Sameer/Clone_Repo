@@ -175,6 +175,19 @@
             requestAnimationFrame(animate);
         }
         
+        // Handle mouse movement
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+        
+       
     </script>
 </body>
 </html>
