@@ -145,6 +145,27 @@
             }
         }
         
+        // Create particles
+        function init() {
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+        
+        // Animation loop
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Create a subtle gradient overlay
+            const gradient = ctx.createRadialGradient(
+                mouseX, mouseY, 0,
+                mouseX, mouseY, 300
+            );
+            gradient.addColorStop(0, 'rgba(255, 255, 255, 0.05)');
+            gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
     </script>
 </body>
 </html>
